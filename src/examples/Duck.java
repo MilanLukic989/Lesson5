@@ -11,10 +11,29 @@ public class Duck {
 	private String favoriteFood;
 	private int lifeExpectancy;
 	
-
+	private String colorOfDucks;
+	private static int numberOfCreations = 0;
+	
 	public Duck(String favoriteFood, int lifeExpectancy) {
 		this.favoriteFood = favoriteFood;
 		this.lifeExpectancy = lifeExpectancy;
+	}
+	
+	public Duck () {
+		numberOfCreations++;
+		if (numberOfCreations % 2 != 0) {
+			this.colorOfDucks = "black";
+		}else {
+			this.colorOfDucks = "white";
+		}
+	}
+	
+	public static int getNumberOfCreations() {
+		return numberOfCreations;
+	}
+
+	public String getColor() {
+		return this.colorOfDucks;
 	}
 
 	public void waddle() {
